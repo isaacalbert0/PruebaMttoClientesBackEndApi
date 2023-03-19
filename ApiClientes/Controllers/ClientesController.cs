@@ -51,13 +51,14 @@ namespace ApiClientes.Controllers
 
         // PUT: api/Clientes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCliente(string id, Cliente cliente)
+        //[HttpPut("{id}")]
+        [HttpPut]
+        public async Task<IActionResult> PutCliente(Cliente cliente)
         {
-            if (id != cliente.Identificacion)
-            {
-                return BadRequest();
-            }
+            //if (id != cliente.Identificacion)
+            //{
+            //    return BadRequest();
+            //}
 
             _context.Entry(cliente).State = EntityState.Modified;
 
@@ -67,14 +68,14 @@ namespace ApiClientes.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ClienteExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                //if (!ClienteExists(id))
+                //{
+                //    return NotFound();
+                //}
+                //else
+                //{
+                //    throw;
+                //}
             }
 
             return NoContent();
